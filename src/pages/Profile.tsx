@@ -24,7 +24,7 @@ export default function Profile() {
 	const [editing, setEditing] = useState(false);
 
 	const grayInput = useMemo(
-		() => (editing ? "opacity-100" : "opacity-50"),
+		() => (editing ? "opacity-100" : "opacity-70"),
 		[editing]
 	);
 
@@ -158,8 +158,8 @@ export default function Profile() {
 							name="weight"
 							type="text"
 							value={inputUser?.weight}
-							className={`bg-input-box px-5 py-3 w-full rounded-md ${grayInput}`}
-							placeholder="350 pounds"
+							className={`bg-input-box px-5 py-3 w-1/5 rounded-md ${grayInput}`}
+							placeholder="350"
 							onChange={(e) => handleChange(e)}
 							disabled={!editing}
 						/>{" "}
