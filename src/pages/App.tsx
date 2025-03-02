@@ -6,6 +6,7 @@ import History from "./History.js";
 import CreateWorkout from "../components/Workout/CreateWorkout.js";
 import Dashboard from "./Dashboard.js";
 import WorkoutHistoryInfo from "../components/History/WorkoutHistoryInfo.js";
+import Help from "./Help.js";
 
 function App() {
 	return (
@@ -14,13 +15,20 @@ function App() {
 			{/* Main Board */}
 			<div className="h-full w-full p-5 opacity-100 flex flex-col justify-center text-black">
 				<Routes>
-					<Route path="/" element={<Navigate replace to="dashboard" />} />
+					<Route
+						path="/"
+						element={<Navigate replace to="dashboard/*" />}
+					/>
 					<Route path="dashboard/*" element={<Dashboard />} />
 					<Route path="profile" element={<Profile />} />
 					<Route path="workout" element={<Workout />}></Route>
 					<Route path="workout/create" element={<CreateWorkout />} />
 					<Route path="history" element={<History />} />
-					<Route path="history/:completionDate" element={<WorkoutHistoryInfo />} />
+					<Route
+						path="history/:completionDate"
+						element={<WorkoutHistoryInfo />}
+					/>
+					<Route path="help" element={<Help />} />
 				</Routes>
 			</div>
 		</div>

@@ -10,6 +10,13 @@ export enum Muscle {
 	ABDOMINALS = "ABDOMINALS",
 }
 
+export enum ActivityLevel {
+	NO_EXERCISE = "NO EXERCISE",
+	SEDENTARY = "SEDENTARY",
+	MODERATE = "MODERATE",
+	INTERMEDIATE = "INTERMEDIATE",
+}
+
 export interface Exercise {
 	name: string;
 	reps: number;
@@ -26,4 +33,13 @@ export interface WorkoutInterface {
 	timeElapsed: string;
 	completionDate?: string;
 	done: boolean;
+}
+
+export interface User {
+	fullName: string;
+	nickname: string;
+	email: string;
+	activityLevel: ActivityLevel;
+	height: string;
+	weight: string;
 }

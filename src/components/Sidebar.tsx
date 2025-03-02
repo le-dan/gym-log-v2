@@ -1,14 +1,14 @@
 import { BookMarked, Dumbbell, House } from "lucide-react";
 import { UserRound } from "lucide-react";
 import { History } from "lucide-react";
-// import { BookOpenText } from "lucide-react";
+import { CircleHelp } from "lucide-react";
 import { NavLink } from "react-router";
 
 export default function Sidebar() {
 	const defSidebarStyle =
 		"flex items-center gap-3 rounded-md p-2 hover-css hover:bg-accent text-xl font-light";
 	return (
-		<div className="shrink-0 w-50 h-full bg-primary py-10 px-4 flex justify-center flex-col gap-25">
+		<div className="shrink-0 w-50 h-full bg-primary pt-10 pb-5 px-4 flex justify-center flex-col gap-25">
 			<span className="w-full flex flex-col gap-10 text-center text-3xl">
 				<div className="flex flex-col items-center gap-2 font-bold">
 					<BookMarked size={50} />
@@ -29,7 +29,7 @@ export default function Sidebar() {
 					Profile
 				</NavLink>
 				<NavLink
-					to={"/"}
+					to={"dashboard"}
 					className={({ isActive }) =>
 						isActive
 							? "bg-accent " + defSidebarStyle
@@ -60,6 +60,17 @@ export default function Sidebar() {
 				>
 					<History size={25} />
 					History
+				</NavLink>
+				<NavLink
+					to={"help"}
+					className={({ isActive }) =>
+						isActive
+							? "bg-accent " + defSidebarStyle + " mt-auto"
+							: defSidebarStyle + " mt-auto"
+					}
+				>
+					<CircleHelp size={25} />
+					Help
 				</NavLink>
 			</div>
 		</div>

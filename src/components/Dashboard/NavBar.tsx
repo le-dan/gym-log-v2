@@ -38,7 +38,7 @@ const renderDays = () => {
 export default function NavBar() {
 	// 0-6, 6 saturday, (6+1)%7 = 0 sunday, (6+7)=13%7 =
 	return (
-		<div className="h-32 p-3 w-2/3 flex basis-1 gap-4 bg-primary rounded-lg shadow-xl">
+		<div className="h-32 p-3 w-max flex basis-1 gap-4 bg-primary rounded-lg shadow-xl">
 			{renderDays()}
 			<div className="h-full w-[2px] bg-snow-white opacity-80 rounded-xl"></div>
 		</div>
