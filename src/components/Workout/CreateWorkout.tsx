@@ -23,7 +23,8 @@ export default function CreateWorkout() {
 				},
 			],
 			intensity: 0,
-			timeElapsed: "0",
+			elapsedMin: 42,
+			elapsedSec: 7,
 			done: false,
 		};
 		workoutDB.push(workout);
