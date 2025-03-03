@@ -75,7 +75,8 @@ export default function WorkoutComplete({ workout, archive }: WorkoutCompletePro
 					</div>
 					<div className="flex flex-col justify-center items-center gap-1 shadow-xl p-8 rounded-3xl text-3xl font-bold">
 						<span className="text-primary">Time Elapsed</span>
-						{String(workout?.elapsedMin).padStart(2, "0")}:{String(workout?.elapsedSec).padStart(2, "0")}
+						<span>Minutes: {String(workout?.elapsedMin).padStart(2, "0")}</span>
+						<span>Seconds: {String(workout?.elapsedSec).padStart(2, "0")}</span>
 					</div>
 				</div>
 				{!archive ? (
