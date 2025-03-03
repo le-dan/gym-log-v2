@@ -94,16 +94,17 @@ export default function CreateWorkout() {
 						let repsInput = (repsInputElement as HTMLInputElement).value;
 						let instructionsInput = (instructionsInputElement as HTMLInputElement).value;
 
-						if (
-							nameInput !== "" &&
-							exerciseNameInput !== "" &&
-							setsInput !== "" &&
-							repsInput !== "" &&
-							instructionsInput !== ""
-						) {
-							await handleCreateButton(nameInput.toString(), exerciseNameInput.toString(), parseInt(setsInput), parseInt(repsInput), instructionsInput.toString());
+						let missingFields = [];
+						if (nameInput === "") missingFields.push("Workout Name");
+						if (exerciseNameInput === "") missingFields.push("Exercise Name");
+						if (setsInput === "") missingFields.push("Sets");
+						if (repsInput === "") missingFields.push("Reps per Set");
+						if (instructionsInput === "") missingFields.push("Instructions");
+
+						if (missingFields.length > 0) {
+							alert("Please fill in the following fields: " + missingFields.join(", "));
 						} else {
-							alert("Please fill in all fields.");
+							await handleCreateButton(nameInput.toString(), exerciseNameInput.toString(), parseInt(setsInput), parseInt(repsInput), instructionsInput.toString());
 						}
 					}}
 				>
