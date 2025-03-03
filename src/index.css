@@ -37,7 +37,6 @@
 	}
 
 	.current-day {
-		background-color: var(--color-primary);
 		border: 2px solid var(--color-snow-white-dark);
 		box-shadow: 0px 0px 10px 0px var(--color-snow-white-dark);
 	}

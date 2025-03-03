@@ -2,14 +2,16 @@ import { WorkoutInterface } from "../../util/interfaces";
 import dayjs from "dayjs";
 import { Trash, X } from "lucide-react";
 import db from "local-db-storage";
-import { NavLink, useNavigate } from "react-router";
+import { NavLink, useLocation, useNavigate } from "react-router";
+import Confetti from "react-confetti";
 
 interface WorkoutCompleteProps {
 	workout: WorkoutInterface | undefined;
 	archive?: boolean;
 }
 
-export default function WorkoutComplete({workout, archive }: WorkoutCompleteProps) {
+export default function WorkoutComplete({ workout, archive }: WorkoutCompleteProps) {
+	const { elapsedMin, elapsedSec } = useLocation().state;
 	let navigate = useNavigate();
 	async function handleSaveButton() {
 		if (workout) {
@@ -33,7 +35,7 @@ export default function WorkoutComplete({workout, archive }: WorkoutCompleteProp
 				workoutHistory = [];
 			}
 			workoutHistory.splice(
-				workoutHistory.findIndex((w) => {					
+				workoutHistory.findIndex((w) => {
 					return w.name === workout.name && w.completionDate === workout.completionDate;
 				}),
 				1
@@ -45,6 +47,7 @@ export default function WorkoutComplete({workout, archive }: WorkoutCompleteProp
 
 	return (
 		<div className="h-full w-full flex justify-center items-center relative overflow-y-scroll">
+			<Confetti numberOfPieces={75} />
 			<div className="rounded-lg p-10 gap-10 h-fit w-1/2 flex flex-col bg-snow-white shadow-2xl shadow-primary text-text justify-center items-center relative">
 				{!archive ? (
 					<></>
@@ -70,7 +73,7 @@ export default function WorkoutComplete({workout, archive }: WorkoutCompleteProp
 					</div>
 					<div className="flex flex-col justify-center items-center gap-1 shadow-xl p-8 rounded-3xl text-3xl font-bold">
 						<span className="text-primary">Time Elapsed</span>
-						15:67
+						{String(elapsedMin).padStart(2, "0")}:{String(elapsedSec).padStart(2, "0")}
 					</div>
 				</div>
 				{!archive ? (
