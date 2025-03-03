@@ -1,4 +1,4 @@
-import { Muscle, WorkoutInterface } from "../../util/interfaces";
+import { WorkoutInterface } from "../../util/interfaces";
 import { useNavigate } from "react-router";
 import db from "local-db-storage";
 
