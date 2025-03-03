@@ -69,7 +69,7 @@ export default function CreateWorkout() {
 					</div>
 				</div>
 				<button
-					className="bg-primary text-white p-2 mt-4 text-center"
+					className="bg-primary text-white p-2 mt-4 text-center hover:bg-accent hover-css"
 					onClick={async (e) => {
 						e.preventDefault();
 						let nameInputElement = document.getElementById("nameInput");
@@ -102,7 +102,7 @@ export default function CreateWorkout() {
 						if (instructionsInput === "") missingFields.push("Instructions");
 
 						if (missingFields.length > 0) {
-							alert("Please fill in the following fields: " + missingFields.join(", "));
+							alert("Please fill in the following fields: \n" + missingFields.join("\n"));
 						} else {
 							await handleCreateButton(nameInput.toString(), exerciseNameInput.toString(), parseInt(setsInput), parseInt(repsInput), instructionsInput.toString());
 						}
