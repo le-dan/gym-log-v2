@@ -30,7 +30,8 @@ export interface WorkoutInterface {
 	name: string;
 	exercises: Exercise[];
 	intensity: number;
-	timeElapsed: string;
+	elapsedMin: number;
+	elapsedSec: number;
 	completionDate?: string;
 	done: boolean;
 }
