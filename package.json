@@ -3,7 +3,6 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
-	"homepage": "https://le-dan.github.io/gym-log-v2/",
 	"scripts": {
 		"dev": "vite",
 		"predeploy": "npm run build",
