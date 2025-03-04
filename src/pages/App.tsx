@@ -22,7 +22,7 @@ function App() {
 			{/* Main Board */}
 			<div className="h-full w-full p-5 opacity-100 flex flex-col justify-center text-black">
 				<Routes>
-					<Route path="/" element={<Navigate replace to="dashboard/*" />} />
+					<Route path="/" element={<Navigate replace to="dashboard" />} />
 					<Route path="dashboard" element={<Dashboard />}>
 						<Route element={<WorkoutGrid setChosenWorkout={setChosenWorkout} />} index />
 						<Route path=":workout/*" element={<WorkoutDisplay workout={chosenWorkout} setChosenWorkout={setChosenWorkout} />} />
