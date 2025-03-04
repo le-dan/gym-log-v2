@@ -5,7 +5,7 @@ import commonjs from "vite-plugin-commonjs";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/gym-log/",
+  base: "/gym-log-v2/",
   plugins: [react(), tailwindcss(), commonjs()],
   resolve: {
     alias: {
