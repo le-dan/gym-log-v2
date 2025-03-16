@@ -33,7 +33,7 @@ export default function SetCard({
 
 	return exercises ? (
 		<div
-			className={`bg-snow-white-dark shadow-md rounded-lg flex hover:scale-102 hover-css duration-100
+			className={`w-[95%] bg-snow-white-dark shadow-md rounded-lg flex hover:scale-102 hover-css duration-100
             ${completed ? "hidden cursor-none" : ""}
             `}
 			onClick={handleCardClick}

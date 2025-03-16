@@ -2,7 +2,7 @@ import { Dumbbell, House, UserRound, History } from "lucide-react";
 
 export default function Help() {
 	return (
-		<div className="h-full py-15 px-30 text-primary">
+		<div className="h-full py-15 px-30 text-primary overflow-y-auto">
 			<div className="text-7xl font-bold mb-25">Guide to JymLog</div>
 			<div className="flex flex-col gap-20">
 				<div className="text-4xl font-bold flex-col gap-5 flex">
